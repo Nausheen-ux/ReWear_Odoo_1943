@@ -1,6 +1,9 @@
 # ReWear
 
 Problem Statement 3 : ReWear – Community Clothing Exchange
+Nausheen - imnausheen123@gmail.com
+Kritika Singh - kritika1824@gmail.com
+Prachi Rattan - prachirattan07@gmail.com
 
 Overview:
 Develop ReWear, a web-based platform that enables users to exchange unused clothing
