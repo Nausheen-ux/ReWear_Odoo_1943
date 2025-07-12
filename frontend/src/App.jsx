@@ -8,7 +8,7 @@ import BrowseItems from "./pages/BrowseItems";
 import AdminDashboard from "./pages/AdminDashboard";
 
 import AddProductPage from "./pages/AddProduct";
-
+import ProductDetails from "./pages/ProductDetails";
 function App() {
   return (
     <BrowserRouter>
@@ -22,6 +22,7 @@ function App() {
          <Route path="/user" element={<UserDashboard />} />
          <Route path="/add-product" element={<AddProductPage/>}/>
          <Route path="/browse" element={<BrowseItems/>}/>
+         <Route path="/product" element={<ProductDetails />} />
       </Routes>
     </BrowserRouter>
   );

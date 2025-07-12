@@ -11,16 +11,57 @@ const [loading, setLoading] = useState(true);
   }, []);
 
   // ✅ Fetch from backend instead of dummy data
-  const fetchPendingItems = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/api/admin/items?status=pending");
-      setPendingItems(res.data);
-    } catch (err) {
-      console.error("Error fetching items:", err);
-    } finally {
-      setLoading(false);
+const fetchPendingItems = async () => {
+  // 🧪 Use dummy data temporarily
+  const dummyItems = [
+    {
+      _id: "1",
+      title: "Vintage Blue Hoodie",
+      description: "A cozy blue hoodie, gently used.",
+      images: ["https://via.placeholder.com/300x200.png?text=Blue+Hoodie"],
+    },
+    {
+      _id: "2",
+      title: "Bohemian Maxi Skirt",
+      description: "Flowy boho skirt, perfect for festivals.",
+      images: ["https://via.placeholder.com/300x200.png?text=Boho+Skirt"],
+    },
+    {
+      _id: "3",
+      title: "Classic Black Blazer",
+      description: "Formal blazer in excellent condition.",
+      images: ["https://via.placeholder.com/300x200.png?text=Black+Blazer"],
+    },
+    {
+      _id: "4",
+      title: "Graphic Tee",
+      description: "Trendy oversized tee with a cool print.",
+      images: ["https://via.placeholder.com/300x200.png?text=Graphic+Tee"],
+    },
+    {
+      _id: "5",
+      title: "Striped Polo Shirt",
+      description: "Comfortable polo shirt for casual wear.",
+      images: ["https://via.placeholder.com/300x200.png?text=Striped+Polo"],
     }
-  };
+  ];
+
+  setPendingItems(dummyItems);
+  setLoading(false);
+
+  // If you want to switch to backend:
+  /*
+  try {
+    const res = await axios.get("http://localhost:5000/api/admin/items?status=pending");
+    setPendingItems(res.data);
+  } catch (err) {
+    console.error("Error fetching items:", err);
+  } finally {
+    setLoading(false);
+  }
+  */
+};
+
 
 const handleApprove = async (id) => {
 try {
@@ -129,4 +170,3 @@ console.error("Reject failed:", err);
 }
 
 export default AdminDashboard;
-
