@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
+import axios from "axios";
 
 function Signup() {
   const navigate = useNavigate();
@@ -14,7 +15,7 @@ function Signup() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!form.name || !form.email || !form.password) {
@@ -22,11 +23,18 @@ function Signup() {
       return;
     }
 
-    // Save user to localStorage (simulated auth)
-    localStorage.setItem("user", JSON.stringify(form));
+    try {
+      const res = await axios.post("http://localhost:5000/api/auth/signup", form);
 
-    // Redirect to dashboard
-    navigate("/dashboard");
+      // Save token and user to localStorage
+      localStorage.setItem("token", res.data.token);
+      localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      // Redirect to dashboard
+      navigate("/dashboard");
+    } catch (err) {
+      setError(err.response?.data?.message || "Signup failed.");
+    }
   };
 
   return (
@@ -47,7 +55,6 @@ function Signup() {
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300"
           />
-
           <input
             type="email"
             name="email"
@@ -56,7 +63,6 @@ function Signup() {
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300"
           />
-
           <input
             type="password"
             name="password"
@@ -65,7 +71,6 @@ function Signup() {
             onChange={handleChange}
             className="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-purple-300"
           />
-
           <button
             type="submit"
             className="w-full bg-purple-600 text-white py-2 rounded font-semibold hover:bg-purple-700"
