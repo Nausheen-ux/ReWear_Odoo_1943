@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "./pages/LandingPage";
 import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
+import UserDashboard from "./pages/UserDashboard";
+import AddItem from "./pages/AddItem";
 import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
@@ -13,6 +15,8 @@ function App() {
          <Route path="/" element={<LandingPage />} />
          <Route path="/signup" element={<SignUp />} />
          <Route path="/login" element={<Login />} />
+         <Route path="/dashboard" element={<UserDashboard />} />
+         <Route path="/add-item" element={<AddItem />} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
