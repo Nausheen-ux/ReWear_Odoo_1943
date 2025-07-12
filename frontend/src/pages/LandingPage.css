@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  padding: 0;
+  border: 10px solid black;
+  height: 100vh;
+  box-sizing: border-box;
+  position: relative;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* ReWear branding on border - position absolute */
+.border-label {
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: black;
+  color: white;
+  font-weight: 900;
+  font-size: 1.5rem;
+  padding: 0 20px;
+  z-index: 99;
+}
+
+/* Main container */
+.landing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: linear-gradient(135deg, #f5e1ff, #fce4ec);
+  position: relative;
+}
+
+/* Inner card with glow */
+.landing-card {
+  background: white;
+  border-radius: 25px;
+  padding: 40px 60px;
+  text-align: center;
+  box-shadow: 0 0 35px rgba(186, 0, 255, 0.3); /* glow effect */
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* Full background with gradient */
+.landing-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #f3e8ff, #ffe4f0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+/* Main content card */
+.card-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  max-width: 650px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+/* Animated glowing border */
+.card-box::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  border-radius: 26px;
+  background: linear-gradient(60deg, #a855f7, #ec4899, #6366f1);
+  background-size: 600% 600%;
+  animation: borderPulse 6s ease infinite;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+@keyframes borderPulse {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Text styles */
+.slogan {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #666;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #6b21a8;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  color: #d946ef;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #4b5563;
+  margin-bottom: 30px;
+}
+
+/* Button group */
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.purple {
+  background-color: #9333ea;
+  color: white;
+}
+
+.purple:hover {
+  background-color: #7e22ce;
+}
+
+.pink {
+  background-color: #ec4899;
+  color: white;
+}
+
+.pink:hover {
+  background-color: #db2777;
+}
+
+.outline {
+  background-color: transparent;
+  border: 2px solid #9333ea;
+  color: #9333ea;
+}
+
+.outline:hover {
+  background-color: #f3e8ff;
+}
+
+/* Login text */
+.login-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.login-link {
+  color: #7c3aed;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
