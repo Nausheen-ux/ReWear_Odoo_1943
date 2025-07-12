@@ -1,4 +1,3 @@
-
 const Item = require('../models/Item');
 
 // Fetch all pending items
