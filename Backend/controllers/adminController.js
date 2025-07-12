@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> b95976e (dashboard)
 const Item = require('../models/Item');
 
 // Fetch all pending items
@@ -35,4 +39,5 @@ exports.rejectItem = async (req, res) => {
     console.error("Error rejecting item:", err);
     res.status(500).json({ msg: "Server error" });
   }
-};
+
+}

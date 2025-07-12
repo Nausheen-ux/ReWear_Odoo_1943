@@ -4,6 +4,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import UserDashboard from "./pages/UserDashboard";
 import AddItem from "./pages/AddItem";
+import BrowseItems from "./pages/BrowseItems";
 import AdminDashboard from "./pages/AdminDashboard";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
          <Route path="/login" element={<Login />} />
          <Route path="/dashboard" element={<UserDashboard />} />
          <Route path="/add-item" element={<AddItem />} />
+         <Route path="/browse" element={<BrowseItems />} />
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
     </BrowserRouter>
