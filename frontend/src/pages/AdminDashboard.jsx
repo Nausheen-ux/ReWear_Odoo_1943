@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Navbar } from "../components/Navbar";
 
 function AdminDashboard() {
   const [pendingItems, setPendingItems] = useState([]);
@@ -80,15 +81,9 @@ function AdminDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-white text-gray-800">
-      {/* Navbar */}
-      <nav className="bg-white shadow mb-6 px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-extrabold text-purple-700 ">Admin Panel</h1>
-        <button className="text-sm bg-red-500 text-white px-4 py-2 rounded-full font-semibold hover:bg-red-600 ">
-          Logout
-        </button>
-      </nav>
+      <Navbar role="admin"/>
 
-      <div className="px-5 py-2">
+      <div className="max-w-5xl mx-auto px-4 py-6">
         {/* Tabs */}
         {/* Admin Summary Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-6">

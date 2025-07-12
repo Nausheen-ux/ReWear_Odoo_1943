@@ -29,7 +29,7 @@ function UserDashboardPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-100 to-white text-gray-800 ">
-        <Navbar/>
+        <Navbar role="user" />
       <div className="max-w-5xl mx-auto px-4 py-6">
         <ProfileHeader user={user} />
         <div className="flex justify-end mb-6">
