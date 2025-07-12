@@ -14,10 +14,10 @@ export function Navbar({ role = "user" }) {
   {role === "admin" ? null : (
     <>
       <Link
-        to="/dashboard"
+        to="/user"
         className="text-purple-600 hover:text-purple-800 transition-colors flex items-center"
       >
-        🏠 Home
+        Home
       </Link>
       <Link
         to="/add-product"

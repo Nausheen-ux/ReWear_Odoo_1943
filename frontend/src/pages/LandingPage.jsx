@@ -19,12 +19,12 @@ function LandingPage() {
               Start Swapping
             </button>
           </Link>
-          <Link to="/dashboard">
+          <Link to="/browse">
             <button className="px-6 py-3 bg-white border border-purple-600 text-purple-600 rounded-full font-semibold hover:bg-purple-50 shadow">
               Browse Items
             </button>
           </Link>
-          <Link to="/add-item">
+          <Link to="/add-product">
             <button className="px-6 py-3 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 shadow-md">
               List an Item
             </button>
@@ -43,4 +43,52 @@ function LandingPage() {
   );
 }
 
-export default LandingPage;
+export default LandingPage; 
+
+
+
+
+
+
+
+// import React from "react";
+// import { Link } from "react-router-dom";
+// import "./LandingPage.css";
+
+// function LandingPage() {
+//   return (
+//     <div className="landing-container">
+//         <div className="border-label">ReWear</div>
+//       <div className="card-box glow-box">
+//         <p className="slogan">✨ Swap Drip, Save the Planet 🌍</p>
+//         <h1 className="title">
+//           Welcome to <span className="highlight">ReWear ♻️</span>
+//         </h1>
+//         <p className="subtitle">
+//           Exchange pre-loved clothes, earn points, and support sustainable fashion.
+//         </p>
+
+//         <div className="btn-group">
+//           <Link to="/signup">
+//             <button className="btn purple">Start Swapping</button>
+//           </Link>
+//           <Link to="/browse">
+//             <button className="btn outline">Browse Items</button>
+//           </Link>
+//           <Link to="/add-item">
+//             <button className="btn pink">List an Item</button>
+//           </Link>
+//         </div>
+
+//         <p className="login-text">
+//           Already have an account?{" "}
+//           <Link to="/login" className="login-link">
+//             Log in here
+//           </Link>
+//         </p>
+//       </div>
+//     </div>
+//   );
+// }
+
+// export default LandingPage;
