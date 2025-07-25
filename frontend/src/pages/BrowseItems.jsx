@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Navbar } from "../components/Navbar";
 
 const dummyCategories = ["Hoodies", "Jackets", "T-Shirts", "Pants", "Shoes"];
 const dummyProducts = [
@@ -28,26 +29,21 @@ function BrowseItems() {
   const [search, setSearch] = useState("");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white px-4 py-8">
-      <div className="max-w-6xl mx-auto">
-        {/* Search Bar */}
-        <div className="flex justify-between items-center mb-4">
-          <h2 className="text-2xl font-bold text-purple-700">Browse Items</h2>
-          <input
-            type="text"
-            placeholder="Search items..."
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            className="border border-gray-300 px-4 py-2 rounded w-1/3 text-sm"
-          />
-        </div>
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-white">
+      {/* Sticky Navbar */}
+      <div className="sticky top-0 z-50 bg-white shadow">
+        <Navbar role="user" search={search} setSearch={setSearch} />
+      </div>
 
-        {/* Carousel Placeholder */}
+      <div className="px-4 py-8 max-w-6xl mx-auto">
+        <h2 className="text-2xl font-bold text-purple-700 mb-4">Browse Items</h2>
+
+        {/* Featured Carousel */}
         <div className="h-48 bg-purple-100 rounded-lg flex items-center justify-center mb-6">
           <p className="text-purple-500 font-semibold">Featured Items Carousel</p>
         </div>
 
-        {/* Category Buttons */}
+        {/* Categories */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
           {dummyCategories.map((cat) => (
             <button
@@ -59,7 +55,7 @@ function BrowseItems() {
           ))}
         </div>
 
-        {/* Product Cards */}
+        {/* Filtered Products */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
           {dummyProducts
             .filter((item) =>
