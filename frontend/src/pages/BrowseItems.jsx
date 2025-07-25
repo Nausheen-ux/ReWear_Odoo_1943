@@ -36,7 +36,7 @@ function BrowseItems() {
       </div>
 
       <div className="px-4 py-8 max-w-6xl mx-auto">
-        <h2 className="text-2xl font-bold text-purple-700 mb-4">Browse Items</h2>
+       
 
         {/* Featured Carousel */}
         <div className="h-48 bg-purple-100 rounded-lg flex items-center justify-center mb-6">

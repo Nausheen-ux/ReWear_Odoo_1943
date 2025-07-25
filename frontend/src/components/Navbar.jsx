@@ -1,12 +1,22 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from "react";
 import { FaUserCircle } from "react-icons/fa";
 
 export function Navbar({ role = "user", search, setSearch }) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const navigate = useNavigate();
 
-  // Simulate login status — replace with real auth check later
-  const isLoggedIn = true; // Or use localStorage/token/authContext
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    setIsLoggedIn(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    setIsLoggedIn(false);
+    navigate("/login");
+  };
 
   return (
     <nav className="bg-white shadow px-6 py-4 flex justify-between items-center mb-6 relative">
@@ -29,7 +39,7 @@ export function Navbar({ role = "user", search, setSearch }) {
             />
 
             <Link
-              to="/browse"
+              to="/"
               className="text-purple-600 hover:text-purple-800 transition-colors flex items-center"
             >
               Home
@@ -58,17 +68,17 @@ export function Navbar({ role = "user", search, setSearch }) {
             {dropdownOpen && (
               <div className="absolute right-0 mt-2 w-40 bg-white border rounded shadow z-50">
                 <Link
-                  to="/user"
+                  to="/profile"
                   className="block px-4 py-2 hover:bg-purple-50 text-sm"
                 >
                   Profile
                 </Link>
-                <Link
-                  to="/logout"
-                  className="block px-4 py-2 hover:bg-purple-50 text-sm text-red-600"
+                <button
+                  onClick={handleLogout}
+                  className="w-full text-left block px-4 py-2 hover:bg-purple-50 text-sm text-red-600"
                 >
                   Logout
-                </Link>
+                </button>
               </div>
             )}
           </div>

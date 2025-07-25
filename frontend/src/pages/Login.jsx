@@ -27,7 +27,7 @@ function Login() {
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
 
-      navigate("/browse");
+      navigate("/");
     } catch (err) {
       setError(err.response?.data?.message || "Invalid email or password.");
     }
