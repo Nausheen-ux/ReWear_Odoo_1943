@@ -6,6 +6,8 @@ Nausheen - imnausheen123@gmail.com
 Kritika Singh - kritika1824@gmail.com  
 Prachi Rattan - prachirattan07@gmail.com  
 
+Video Link: https://drive.google.com/file/d/1O6tzbhFC6zXFfbSHwLYSkXJdO898N9Iz/view?usp=sharing  
+
 Overview:
 Develop ReWear, a web-based platform that enables users to exchange unused clothing
 through direct swaps or a point-based redemption system. The goal is to promote sustainable
