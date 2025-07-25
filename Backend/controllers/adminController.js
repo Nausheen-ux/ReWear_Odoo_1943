@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> b95976e (dashboard)
 const Item = require('../models/Item');
 
 // Fetch all pending items
