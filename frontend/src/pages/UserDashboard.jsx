@@ -13,12 +13,35 @@ function UserDashboardPage() {
     avatar: "https://via.placeholder.com/100x100.png?text=User",
   });
 
-  const [listings] = useState([
-    { id: 1, title: "Denim Jacket", image: "https://via.placeholder.com/150" },
-    { id: 2, title: "Floral Skirt", image: "https://via.placeholder.com/150" },
-    { id: 3, title: "Tote Bag", image: "https://via.placeholder.com/150" },
-    { id: 4, title: "White Shirt", image: "https://via.placeholder.com/150" },
-  ]);
+  const [listings, setListings] = useState([
+  { id: 1, title: "Denim Jacket", image: "https://via.placeholder.com/150" },
+  { id: 2, title: "Floral Skirt", image: "https://via.placeholder.com/150" },
+  { id: 3, title: "Tote Bag", image: "https://via.placeholder.com/150" },
+  { id: 4, title: "White Shirt", image: "https://via.placeholder.com/150" },
+]);
+
+const handleRemoveListing = (id) => {
+  setListings(listings.filter(item => item.id !== id));
+};
+
+
+  const [history] = useState([
+  { id: 1, title: "Blue Jeans", image: "https://via.placeholder.com/150" },
+  { id: 2, title: "Checked Shirt", image: "https://via.placeholder.com/150" },
+]);
+
+const [pendingRequests, setPendingRequests] = useState([
+  { id: 1, item: "Blue Jeans", requester: "Aarav" },
+  { id: 2, item: "Vintage Tee", requester: "Meera" },
+]);
+const handleAccept = (id) => {
+  setPendingRequests(pendingRequests.filter((req) => req.id !== id));
+  // Optional: You can add logic to move accepted requests to purchase/history
+};
+
+const handleReject = (id) => {
+  setPendingRequests(pendingRequests.filter((req) => req.id !== id));
+};
 
   const [purchases] = useState([
     { id: 1, title: "Woolen Scarf", image: "https://via.placeholder.com/150" },
@@ -37,8 +60,21 @@ function UserDashboardPage() {
         </div>
        
 
-        <ListingsGrid title="My Listings" items={listings} />
+        <ListingsGrid
+                title="My Listings"
+                items={listings}
+                removable={true}
+                onRemove={handleRemoveListing}
+/>
         <ListingsGrid title="My Purchases" items={purchases} />
+        <ListingsGrid title="My History" items={history} />
+        <ListingsGrid
+                title="Pending Requests"
+                items={pendingRequests}
+                pending={true}
+                onAccept={handleAccept}
+                onReject={handleReject}
+/>
       </div>
     </div>
   );
